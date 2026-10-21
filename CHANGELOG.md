@@ -2,7 +2,7 @@
 
 
 
-\## 2026-10-21 - Brayan Morales
+\## 2026-10-21 - BrayanUMV
 
 \- Estructura inicial del repositorio.
 
