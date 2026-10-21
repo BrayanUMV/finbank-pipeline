@@ -1,0 +1,25 @@
+# Configuración de generación de datos sintéticos - FinBank
+seed: 42
+
+date_range:
+  start: "2025-10-01"
+  end: "2026-09-30"   # 12 meses de historia
+
+volumes:              # definidos por la prueba
+  TB_CLIENTES_CORE: 10000
+  TB_PRODUCTOS_CAT: 50
+  TB_MOV_FINANCIEROS: 500000
+  TB_OBLIGACIONES: 30000
+  TB_SUCURSALES_RED: 200
+  TB_COMISIONES_LOG: 80000
+
+quality:
+  null_rate: 0.05                  # ~5% de nulos en campos no críticos
+  duplicate_rate: 0.01             # anomalía 1: transacciones duplicadas
+  out_of_range_date_rate: 0.005    # anomalía 2: fechas fuera de rango
+  inconsistent_rate: 0.005         # anomalía 3: campos inconsistentes
+
+output:
+  csv_tables: ["TB_CLIENTES_CORE", "TB_PRODUCTOS_CAT", "TB_SUCURSALES_RED"]
+  parquet_tables: ["TB_MOV_FINANCIEROS", "TB_OBLIGACIONES", "TB_COMISIONES_LOG"]
+  path: "data/raw"

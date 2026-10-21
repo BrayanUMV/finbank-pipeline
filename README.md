@@ -38,3 +38,16 @@
 
 \- `/docs`: diagramas, catálogo de datos y diagrama ER.
 
+## 4. Entorno de ejecución
+
+- Python: 3.12
+- Sistema operativo de desarrollo: Windows 11
+- Instalación de dependencias:
+
+```bash
+py -3.12 -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+**Nota:** se usa una versión estable de Python porque las versiones más recientes aún no tienen paquetes precompilados para algunas librerías (como pyyaml) y obligan a compilarlas. (Fue la primera dificultad que se presento)

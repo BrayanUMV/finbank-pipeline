@@ -10,3 +10,11 @@
 
 \- Se creó el README con las decisiones iniciales (sector y plataforma).
 
+
+
+\- Entorno virtual de Python 3.12 y requirements.txt.
+
+\- Sección de entorno de ejecución en el README.
+
+\- Archivo config.yaml con semilla, volúmenes, rango de fechas, tasas de calidad y formatos de salida.
+
