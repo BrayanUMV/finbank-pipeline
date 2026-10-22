@@ -83,9 +83,3 @@ erDiagram
         numeric longitud
         smallint activo
     }
-
-## Notas
-
-- `TB_MOV_FINANCIEROS.id_mov` no es llave primaria: la fuente trae duplicados intencionales que se tratan en Silver.
-- `TB_SUCURSALES_RED` no tiene llave foránea hacia otras tablas. La relación con los movimientos es lógica, por ciudad, y se resuelve en la capa Gold (`dim_geografia`).
-- `TB_MOV_FINANCIEROS.cod_ciudad` usa códigos DANE (por ejemplo `11001` para Bogotá), mientras que `TB_SUCURSALES_RED.ciudad` guarda el nombre. El catálogo de equivalencias se construye en Gold.
