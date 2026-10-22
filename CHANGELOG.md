@@ -2,7 +2,9 @@
 
 
 
-\## 2026-10-21 - BrayanUMV
+&#x09;	## 2026-10-21 - BrayanUMV
+
+
 
 \- Estructura inicial del repositorio.
 
@@ -37,4 +39,16 @@
 \- Diagrama ER de la base fuente en docs/er\_diagram.md.
 
 \- Instrucciones de reproducción de la Fase 1 en el README.
+
+
+
+&#x09;	## 2026-10-22 - BrayanUMV
+
+
+
+\- Fase 2: infraestructura en Azure con Terraform (grupo de recursos, ADLS Gen2 con bronze/silver/gold, Key Vault, PostgreSQL, Log Analytics, Action Group, Databricks, roles).
+
+\- Región de PostgreSQL parametrizada (pg\_location) porque la región principal no ofrecía PostgreSQL 16.
+
+\- Base fuente cargada en PostgreSQL de Azure.
 

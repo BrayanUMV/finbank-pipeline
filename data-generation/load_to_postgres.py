@@ -1,5 +1,6 @@
 """Carga los datos sintéticos en PostgreSQL (fuente origen del pipeline).
 Uso: python data-generation/load_to_postgres.py"""
+import os
 import io
 import time
 from datetime import datetime
@@ -16,10 +17,10 @@ LOAD_ORDER = ["TB_PRODUCTOS_CAT", "TB_SUCURSALES_RED", "TB_CLIENTES_CORE",
 
 
 def connect():
-    env = dotenv_values(BASE_DIR / ".env")  # las credenciales viven en .env, fuera de Git
-    return psycopg2.connect(host="localhost", port=5432, user=env["POSTGRES_USER"],
-                            password=env["POSTGRES_PASSWORD"], dbname=env["POSTGRES_DB"])
-
+    env = dotenv_values(BASE_DIR / os.environ.get("ENV_FILE", ".env"))
+    return psycopg2.connect(host=env.get("POSTGRES_HOST", "localhost"), port=5432,
+                            user=env["POSTGRES_USER"], password=env["POSTGRES_PASSWORD"],
+                            dbname=env["POSTGRES_DB"], sslmode=env.get("POSTGRES_SSLMODE", "prefer"))
 
 def create_schema(conn):
     sql = (BASE_DIR / "schema.sql").read_text(encoding="utf-8")
