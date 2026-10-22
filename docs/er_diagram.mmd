@@ -1,0 +1,91 @@
+erDiagram
+    TB_CLIENTES_CORE ||--o{ TB_OBLIGACIONES : tiene
+    TB_CLIENTES_CORE ||--o{ TB_MOV_FINANCIEROS : realiza
+    TB_CLIENTES_CORE ||--o{ TB_COMISIONES_LOG : paga
+    TB_PRODUCTOS_CAT ||--o{ TB_OBLIGACIONES : define
+    TB_PRODUCTOS_CAT ||--o{ TB_MOV_FINANCIEROS : clasifica
+    TB_PRODUCTOS_CAT ||--o{ TB_COMISIONES_LOG : origina
+
+    TB_CLIENTES_CORE {
+        bigint id_cli PK
+        varchar nomb_cli
+        varchar apell_cli
+        varchar tip_doc
+        varchar num_doc
+        date fec_nac
+        date fec_alta
+        varchar cod_segmento
+        int score_buro
+        varchar ciudad_res
+        varchar depto_res
+        varchar estado_cli
+        varchar canal_adquis
+    }
+
+    TB_PRODUCTOS_CAT {
+        varchar cod_prod PK
+        varchar desc_prod
+        varchar tip_prod
+        numeric tasa_ea
+        int plazo_max_meses
+        bigint cuota_min
+        bigint comision_admin
+        varchar estado_prod
+    }
+
+    TB_OBLIGACIONES {
+        varchar id_oblig PK
+        bigint id_cli FK
+        varchar cod_prod FK
+        bigint vr_aprobado
+        bigint vr_desembolsado
+        bigint sdo_capital
+        bigint vr_cuota
+        date fec_desembolso
+        date fec_venc
+        int dias_mora_act
+        int num_cuotas_pend
+        char calif_riesgo
+    }
+
+    TB_MOV_FINANCIEROS {
+        bigint id_mov
+        bigint id_cli FK
+        varchar cod_prod FK
+        varchar num_cuenta
+        date fec_mov
+        time hra_mov
+        bigint vr_mov
+        varchar tip_mov
+        varchar cod_canal
+        varchar cod_ciudad
+        varchar cod_estado_mov
+        varchar id_dispositivo
+    }
+
+    TB_COMISIONES_LOG {
+        varchar id_comision PK
+        bigint id_cli FK
+        varchar cod_prod FK
+        date fec_cobro
+        bigint vr_comision
+        varchar tip_comision
+        varchar estado_cobro
+    }
+
+    TB_SUCURSALES_RED {
+        varchar cod_suc PK
+        varchar nom_suc
+        varchar tip_punto
+        varchar ciudad
+        varchar depto
+        numeric latitud
+        numeric longitud
+        smallint activo
+    }
+
+## Notas
+
+- `TB_MOV_FINANCIEROS.id_mov` no es llave primaria: la fuente trae duplicados intencionales que se tratan en Silver.
+- `TB_SUCURSALES_RED` no tiene llave foránea hacia otras tablas. La relación con los movimientos es lógica, por ciudad, y se resuelve en la capa Gold (`dim_geografia`).
+- `TB_MOV_FINANCIEROS.cod_ciudad` usa códigos DANE (por ejemplo `11001` para Bogotá), mientras que `TB_SUCURSALES_RED.ciudad` guarda el nombre. El catálogo de equivalencias se construye en Gold.

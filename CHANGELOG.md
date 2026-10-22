@@ -32,3 +32,9 @@
 
 \- Anomalías documentadas (7 patrones) y picos atípicos para el motor de fraude.
 
+
+
+\- Diagrama ER de la base fuente en docs/er\_diagram.md.
+
+\- Instrucciones de reproducción de la Fase 1 en el README.
+
