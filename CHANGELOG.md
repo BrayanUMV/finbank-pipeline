@@ -26,3 +26,9 @@
 
 \- Generador de datos sintéticos (tablas maestras): productos, sucursales y clientes, con semilla fija, nulos y anomalías controladas.
 
+
+
+\- Generador de tablas transaccionales: obligaciones, movimientos y comisiones.
+
+\- Anomalías documentadas (7 patrones) y picos atípicos para el motor de fraude.
+

@@ -55,3 +55,7 @@ pip install -r requirements.txt
 5. Supuestos
 - Los datos de FinBank se modelan para Colombia (COP, Superintendencia Financiera, PSE, ACH), con 12 ciudades principales.
 - `comision_admin` está en COP: mensual para créditos y ahorro, por transacción para productos transaccionales.
+
+- Las obligaciones se desembolsan desde octubre 2024 para que exista cartera con historial; los movimientos y comisiones cubren octubre 2025 a septiembre 2026.
+- Se generan 7 patrones de anomalías, registrados en `data/raw/anomalies_log.json`: fechas de nacimiento futuras, estados inconsistentes, fechas de movimiento fuera de rango, montos negativos, transacciones duplicadas, saldos mayores al desembolso y días de mora negativos.
+- Los nulos en `id_dispositivo` incluyen un nulo estructural: las operaciones por corresponsal no tienen dispositivo.

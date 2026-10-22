@@ -5,6 +5,7 @@ from faker import Faker
 
 from common import REPO_DIR, load_config, make_rng, write_table
 from master_tables import generate_clientes, generate_productos, generate_sucursales
+from transactional_tables import generate_comisiones, generate_movimientos, generate_obligaciones
 
 
 def main():
@@ -14,10 +15,21 @@ def main():
     fake = Faker("es_CO")
     anomalies = {}
 
+    # El orden importa: las tablas transaccionales dependen de las maestras
+    productos = generate_productos(cfg, rng)
+    sucursales = generate_sucursales(cfg, rng)
+    clientes = generate_clientes(cfg, rng, fake, anomalies)
+    obligaciones = generate_obligaciones(cfg, rng, clientes, productos, anomalies)
+    movimientos = generate_movimientos(cfg, rng, clientes, productos, anomalies)
+    comisiones = generate_comisiones(cfg, rng, obligaciones, movimientos, productos)
+
     tables = {
-        "TB_PRODUCTOS_CAT": generate_productos(cfg, rng),
-        "TB_SUCURSALES_RED": generate_sucursales(cfg, rng),
-        "TB_CLIENTES_CORE": generate_clientes(cfg, rng, fake, anomalies),
+        "TB_CLIENTES_CORE": clientes,
+        "TB_PRODUCTOS_CAT": productos,
+        "TB_MOV_FINANCIEROS": movimientos,
+        "TB_OBLIGACIONES": obligaciones,
+        "TB_SUCURSALES_RED": sucursales,
+        "TB_COMISIONES_LOG": comisiones,
     }
 
     for name, df in tables.items():
