@@ -1,0 +1,6 @@
+env                = "dev"
+alert_email        = "brayanumv02022001@gmail.com"
+my_ip              = "189.217.98.57"
+engineers_group_id = "41e0e700-96f7-401c-bac3-944337755a1f"
+analysts_group_id  = "05ad0619-efbe-4c4f-b701-cca8b789aea0"
+admins_group_id    = "ff19e397-daf3-4827-a732-1588669bbb1e"
