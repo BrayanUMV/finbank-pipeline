@@ -18,3 +18,11 @@
 
 \- Archivo config.yaml con semilla, volúmenes, rango de fechas, tasas de calidad y formatos de salida.
 
+
+
+\- PostgreSQL 16 en Docker como base fuente, con credenciales en .env (excluido de Git) y plantilla .env.example.
+
+
+
+\- Generador de datos sintéticos (tablas maestras): productos, sucursales y clientes, con semilla fija, nulos y anomalías controladas.
+

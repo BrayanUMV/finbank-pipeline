@@ -23,3 +23,18 @@ output:
   csv_tables: ["TB_CLIENTES_CORE", "TB_PRODUCTOS_CAT", "TB_SUCURSALES_RED"]
   parquet_tables: ["TB_MOV_FINANCIEROS", "TB_OBLIGACIONES", "TB_COMISIONES_LOG"]
   path: "data/raw"
+
+# Catálogo de ciudades (código DANE, ubicación y peso de participación)
+cities:
+  - {cod: "11001", nombre: "Bogotá D.C.", depto: "Bogotá D.C.", lat: 4.711, lon: -74.072, peso: 0.30}
+  - {cod: "05001", nombre: "Medellín", depto: "Antioquia", lat: 6.244, lon: -75.581, peso: 0.15}
+  - {cod: "76001", nombre: "Cali", depto: "Valle del Cauca", lat: 3.452, lon: -76.532, peso: 0.10}
+  - {cod: "08001", nombre: "Barranquilla", depto: "Atlántico", lat: 10.964, lon: -74.796, peso: 0.08}
+  - {cod: "13001", nombre: "Cartagena", depto: "Bolívar", lat: 10.391, lon: -75.479, peso: 0.06}
+  - {cod: "68001", nombre: "Bucaramanga", depto: "Santander", lat: 7.119, lon: -73.122, peso: 0.06}
+  - {cod: "66001", nombre: "Pereira", depto: "Risaralda", lat: 4.813, lon: -75.696, peso: 0.05}
+  - {cod: "17001", nombre: "Manizales", depto: "Caldas", lat: 5.070, lon: -75.514, peso: 0.04}
+  - {cod: "54001", nombre: "Cúcuta", depto: "Norte de Santander", lat: 7.894, lon: -72.504, peso: 0.05}
+  - {cod: "47001", nombre: "Santa Marta", depto: "Magdalena", lat: 11.241, lon: -74.199, peso: 0.04}
+  - {cod: "73001", nombre: "Ibagué", depto: "Tolima", lat: 4.438, lon: -75.232, peso: 0.04}
+  - {cod: "50001", nombre: "Villavicencio", depto: "Meta", lat: 4.142, lon: -73.627, peso: 0.03}
