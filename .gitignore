@@ -19,3 +19,6 @@ __pycache__/
 data/
 *.parquet
 *.csv
+.env.*
+!.env.example
+!infra/envs/*.tfvars
