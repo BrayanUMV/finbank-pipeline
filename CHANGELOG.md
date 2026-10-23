@@ -52,3 +52,13 @@
 
 \- Base fuente cargada en PostgreSQL de Azure.
 
+
+
+\- Fase 3: notebook común con reintentos, alertas y registro de corridas.
+
+\- Capa Bronze incremental con auditoría y partición por fecha de ingesta.
+
+
+
+\- Capa Silver con limpieza, validación de llaves, tabla de errores, hash de PII y bandera de fraude.
+
