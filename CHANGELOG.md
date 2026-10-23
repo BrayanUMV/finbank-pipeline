@@ -62,3 +62,9 @@
 
 \- Capa Silver con limpieza, validación de llaves, tabla de errores, hash de PII y bandera de fraude.
 
+
+
+\- Pruebas de calidad automáticas sobre Gold con reporte de aprobación o fallo.
+
+\- Notebook de resumen diario por correo.
+
