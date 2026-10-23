@@ -68,3 +68,11 @@
 
 \- Notebook de resumen diario por correo.
 
+
+
+&#x09;	## 2026-10-23 - BrayanUMV
+
+
+
+\- Fase 4: job diario en Databricks Workflows (5 tareas encadenadas) y su definición en orchestration/.
+
