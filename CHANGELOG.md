@@ -76,3 +76,19 @@
 
 \- Fase 4: job diario en Databricks Workflows (5 tareas encadenadas) y su definición en orchestration/.
 
+
+
+\- Fase 5: roles por grupos de Entra ID con evidencia de acceso denegado y auditoría en Log Analytics.
+
+\- Catálogo de datos generado desde los esquemas reales y linaje de tres campos calculados.
+
+
+
+&#x09;	## 2026-10-24 - BrayanUMV
+
+
+
+\-Fase 4: el job se ejecutó por el programador a las 02:00 y terminó correctamente.
+
+\-Documentación: README completo, evidencias ordenadas por fase en docs/evidencias y PDF de evidencias.
+
